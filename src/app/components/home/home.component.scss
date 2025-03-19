@@ -1,0 +1,48 @@
+.iconsMenu {
+  text-align: center;
+  margin: 1vh;
+  margin-top: 2vh;
+  cursor: pointer;
+
+  p {
+    font-weight: 500;
+    font-size: 2vh;
+  }
+
+  .menuIcons {
+    height: 30vh;
+    width: 30vh;
+    border-radius: 15px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  position: relative;
+}
+
+.menuButtons {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 15vh;
+}
+
+@media screen and (max-width: 640px) and (min-width: 300px) {
+
+  .mob-view {
+    width: 100%;
+  }
+
+  ::ng-deep.overall-container {
+    overflow-y: auto !important;
+  }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 640px) {
+
+  .menuIcons {
+    height: 20vh !important;
+    width: 20vh !important;
+    margin: 2vh !important;
+  }
+}

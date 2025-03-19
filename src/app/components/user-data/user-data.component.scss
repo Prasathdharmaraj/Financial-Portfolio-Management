@@ -1,0 +1,96 @@
+.content {
+    margin: 2vh;
+    overflow: auto;
+}
+
+.table-in {
+    height: 73vh;
+    overflow: auto;
+    margin-right: 2vh;
+    margin-left: 8vh;
+    td{
+        white-space: nowrap;
+        font-size: 1.7vh;
+    }
+    th{
+        
+    }
+    .actionIcons{
+        margin-right: 1vh;
+        margin-left: 1vh;
+        cursor: pointer;
+        font-size: 1.7vh;
+    }
+}
+::ng-deep.mdc-data-table__cell{
+    white-space: nowrap;
+    font-size: 1.7vh;
+}
+::ng-deep.mdc-data-table__header-cell{
+    white-space: nowrap;
+    font-size: 1.7vh;
+}
+::ng-deep.tab-cls .mat-mdc-tab-header {
+    margin-left: 4vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 2vh;
+    margin-right: 2vh;
+}
+
+::ng-deep.tab-cls .mdc-tab__text-label {
+    color: #fff !important;
+}
+
+
+::ng-deep.tab-cls .mat-mdc-tab-list {
+    background-color: #0088d4 !important;
+    border-radius: 1vh 1vh 0vh 0vh;
+}
+
+::ng-deep.tab-cls .mdc-tab-indicator__content--underline {
+    border-color: #fff !important;
+    border: 2px solid;
+}
+
+::ng-deep.tab-cls .mat-mdc-tab.mdc-tab {
+    margin-left: 2vh;
+}
+
+::ng-deep.tab-cls .mdc-tab-indicator--active {
+    background-color: #f0f8ff38;
+    border-radius: 10px;
+}
+
+.table-head-style {
+    background-color: #e2e2e2;
+    position: sticky;
+    top: 0;
+}
+
+.search_parent {
+    margin-left: 4vh;
+}
+
+.search_input {
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid #0094bc;
+    color: black;
+    padding-right: 5vh;
+}
+
+.search-icon {
+    position: relative;
+    right: 3vh;
+}
+
+.addNewButton {
+    border-radius: 10px;
+    margin-right: 2vh;
+    padding: 2vh;
+    font-size: 1.5vh;
+    background-color: #e56d09 !important;
+    color: #fff !important;
+}

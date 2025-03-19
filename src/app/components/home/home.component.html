@@ -1,0 +1,11 @@
+<app-header [headerTitle]="headerTitle"></app-header>
+<div class="container-fluid">
+  <div class="row justify-content-md-center menuButtons">
+    <ng-container *ngFor="let obj of menuList">
+        <div class="col-3 mob-view iconsMenu" (click)="navigateTo(obj.navigate)">
+          <img [src]="obj.img" class="menuIcons">
+          <p>{{obj?.title}}</p>
+        </div>
+    </ng-container>
+  </div>
+</div>

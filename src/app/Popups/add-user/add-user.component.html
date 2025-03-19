@@ -1,0 +1,103 @@
+<div class="container">
+  <form [formGroup]="userForm">
+    <h1 mat-dialog-title class="project_popup_header">User Details</h1>
+    <hr class="hr_line">
+    <mat-dialog-content class="fields">
+      <div class="namefield">
+        <mat-form-field class="field" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="userName" required>
+          <mat-hint class="err-msg"
+            *ngIf="formC['userName'].touched && formC['userName'].errors && !formC['userName'].errors?.['required']">Name is invalid</mat-hint>
+          <mat-hint class="err-msg"
+            *ngIf="formC['userName'].touched && formC['userName'].errors?.['required']">Name is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="userContactNumber" required>
+          <mat-hint class="err-msg"
+            *ngIf="formC['userContactNumber'].touched && formC['userContactNumber'].errors && !formC['userContactNumber'].errors?.['required']">Phone Number is invalid</mat-hint>
+          <mat-hint class="err-msg"
+            *ngIf="formC['userContactNumber'].touched && formC['userContactNumber'].errors?.['required']">Phone Number is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="userEmailId" required (focusout)="emailOutFnctn($event)">
+          <mat-hint class="err-msg"
+            *ngIf="formC['userEmailId'].touched && formC['userEmailId'].errors && !formC['userEmailId'].errors?.['required']">Email Address is invalid</mat-hint>
+          <mat-hint class="err-msg"
+            *ngIf="formC['userEmailId'].touched && formC['userEmailId'].errors?.['required']">Email Address is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="userGender" required>
+            <mat-option *ngFor="let option of masterData?.gender" [value]="option.code">
+              {{option.description}}
+            </mat-option>
+          </mat-select>
+          <mat-hint class="err-msg" *ngIf="formC['userGender'].touched && formC['userGender'].errors && !formC['userGender'].errors?.['required']">Gender is invalid</mat-hint>
+          <mat-hint class="err-msg" *ngIf="formC['userGender'].touched && formC['userGender'].errors?.['required']">Gender is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Asset Type</mat-label>
+          <input matInput formControlName="assetType" required >
+          <mat-hint class="err-msg"
+            *ngIf="formC['assetType'].touched && formC['assetType'].errors?.['required']">Asset Type is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Quantity</mat-label>
+          <input matInput formControlName="quantity" required  (keyup)="calculateTotal()">
+          <mat-hint class="err-msg" *ngIf="formC['quantity'].touched && formC['quantity'].errors && !formC['quantity'].errors?.['required']">Quantity is invalid</mat-hint>
+          <mat-hint class="err-msg" *ngIf="formC['quantity'].touched && formC['quantity'].errors?.['required']">Quantity is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Price Per Item</mat-label>
+          <input matInput formControlName="pricePerItem" required (keyup)="calculateTotal()">
+          <mat-hint class="err-msg" *ngIf="formC['pricePerItem'].touched && formC['pricePerItem'].errors && !formC['pricePerItem'].errors?.['required']">Price Per Item is invalid</mat-hint>
+          <mat-hint class="err-msg" *ngIf="formC['pricePerItem'].touched && formC['pricePerItem'].errors?.['required']">Price Per Item is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Total Price</mat-label>
+          <input matInput formControlName="totalPrice" required >
+          <mat-hint class="err-msg" *ngIf="formC['totalPrice'].touched && formC['totalPrice'].errors && !formC['totalPrice'].errors?.['required']">Total Price is invalid</mat-hint>
+          <mat-hint class="err-msg" *ngIf="formC['totalPrice'].touched && formC['totalPrice'].errors?.['required']">Total Price is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 2vh;">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="userDate" [matDatepicker]="doj" readonly [min]="minDate">
+          <mat-datepicker-toggle matIconSuffix [for]="doj"></mat-datepicker-toggle>
+          <mat-datepicker #doj></mat-datepicker>
+          <mat-hint class="err-msg"
+            *ngIf="formC['userDate'].touched && formC['userDate'].errors && !formC['userDate'].errors?.['required']">Date is invalid</mat-hint>
+          <mat-hint class="err-msg"
+            *ngIf="formC['userDate'].touched && formC['userDate'].errors?.['required']">Date is required</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+      </div>
+    </mat-dialog-content>
+
+
+
+  </form>
+</div>
+<div class="btn-align">
+  <span class="last-btn" style="background-color: green;" *ngIf="!preview" (click)="save()">Save</span>
+  <span class="last-btn" style="background-color: #fb1a1a;" (click)="onCancel()">Cancel</span>
+</div>

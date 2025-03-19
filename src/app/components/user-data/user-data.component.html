@@ -1,0 +1,35 @@
+<app-header [headerTitle]="headerTitle"></app-header>
+<div style="margin-top: 2vh;">
+    <span class="search_parent">
+        <input matInput class="search_input" (keyup)="applyFilter($event)" placeholder="Search">
+        <mat-icon class="search-icon">search</mat-icon>
+    </span>
+    <span class="float-end">
+        <button mat-raised-button  (click)="addNewUser()" class="addNewButton" matTooltip="Add New User">New User <mat-icon>add_circle</mat-icon></button>
+        <img matTooltip="Back" style="margin-right: 2vh; cursor: pointer;height: 5vh;" (click)="backtoHome()" src="assets/images/backIcon.jpg"
+            alt="Back_Icon">
+    </span>
+</div>
+<div class="content">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 applicant-table" #t1Sort="matSort" matSort class="web-access">
+        <ng-container *ngFor="let column of displayedColumns">
+            <ng-container [matColumnDef]="column" *ngIf="column != 'Action'">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
+                <td mat-cell *matCellDef="let element" [matTooltip]="element[column]">
+                    {{element[column]}}                    
+                </td>
+            </ng-container>
+            <ng-container [matColumnDef]="column" *ngIf="column == 'Action'" stickyEnd>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sticky> {{column}} </th>
+                <td mat-cell *matCellDef="let element" [matTooltip]="element[column]">
+                    <mat-icon class="actionIcons" matTooltip="Edit" (click)="editUser(element, 'edit')">edit</mat-icon>
+                    <mat-icon class="actionIcons" matTooltip="View" (click)="editUser(element, 'view')">remove_red_eye</mat-icon>
+                </td>
+            </ng-container>
+
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="table-head-style" sticky></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+    </table>
+</div>
