@@ -1,0 +1,146 @@
+.canvasjs-chart-credit {
+  display: none;
+}
+
+.chartsArea {
+  border: 1px solid gainsboro;
+  background: #fff;
+  margin: 1vh;
+  width: 32%;
+}
+
+.chart9 {
+  text-align: center;
+
+  li {
+    text-align: left;
+  }
+}
+
+.reset {
+  width: 10vh;
+  height: 4vh;
+  border: 2px solid #d81b60;
+  border-radius: 20px;
+  color: #000;
+  font-size: 1.5vh;
+  background-color: #fff !important;
+}
+
+.chartContent {
+  border: 1px solid #20b2c8;
+  margin: 1vh;
+  height: 80vh;
+  overflow: auto;
+}
+
+.my_class1 {
+  height: 60vh;
+  overflow: auto;
+  background: #a7a7ea7a;
+}
+
+.my_class2 {
+  height: 83vh;
+  overflow: auto;
+  background: #a7a7ea7a;
+}
+
+.calculate {
+  width: 10vh;
+  height: 4vh;
+  border: 2px solid #d81b60;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 1.5vh;
+  background-color: #d81b60 !important;
+  margin-right: 1vh;
+}
+
+.headerCharts {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  background: #83c1cb;
+
+  .cardDetail {
+    margin: 0.5vh;
+    width: 15%;
+    display: inline-block;
+    background-color: #fff;
+    cursor: pointer;
+    border: 0.5px solid #c0c0c0;
+  }
+
+  .matHeaderVal {
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .cardContent {
+    padding-bottom: 0.7vh;
+    background-size: cover;
+
+    p {
+      padding-top: 1vh;
+      font-weight: 500;
+      font-size: 2vh;
+    }
+  }
+}
+::ng-deep.apexcharts-title-text{
+  font-size: 1.7vh;
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+
+  .chartsArea {
+    width: 48%;
+  }
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+
+  .chartsArea {
+    width: 98%;
+  }
+  .cardDetail{
+    width: 98% !important;
+    display: block;
+  }
+  .apexcharts-canvas{
+    width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 650px) {
+
+  .chartsArea {
+    width: 98%;
+  }
+  .cardDetail{
+    width: 98% !important;
+    display: block;
+  }
+  .apexcharts-canvas{
+    width: 100%;
+  }
+
+}
+@media screen and (max-width: 480px){
+
+  .chartsArea {
+    width: 98%;
+  }
+  .cardDetail{
+    width: 98% !important;
+    display: block;
+  }
+  .apexcharts-canvas{
+    width: 100%;
+  }
+
+}

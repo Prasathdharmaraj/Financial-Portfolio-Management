@@ -1,1 +1,36 @@
 <app-header [headerTitle]="headerTitle"></app-header>
+<div style="margin-top: 2vh;">
+  <span class="float-end">
+    <img matTooltip="Back" style="margin-right: 2vh; cursor: pointer;height: 5vh;" (click)="backtoHome()"
+      src="assets/images/backIcon.jpg" alt="Back_Icon">
+  </span>
+</div>
+<div class="chartContent row" *ngIf="showCharts">
+  <div class="headerCharts">
+    <ng-container *ngFor="let content of headerDeatils; let i = index">
+      <mat-card class="cardDetail" appearance="outlined">
+        <!-- <mat-card-header class="matHeaderVal">
+                    <mat-card-title style="font-size: 2vh;white-space: nowrap;overflow: hidden;">{{ content.title }}</mat-card-title>
+                  </mat-card-header> -->
+        <mat-card-content class="cardContent" [style.background]="content.bgColor">
+          <p>
+            <!-- {{content.value}} -->
+            <apx-chart [series]="content.charts.series" [chart]="content.charts.chart" [xaxis]="content.charts.xaxis"
+              [yaxis]="content.charts.yaxis" [title]="content.charts.title" [legend]="content.charts.legend"
+              [subtitle]="content.charts.subtitle" [dataLabels]="content.charts.dataLabels"
+              [labels]="content.charts.labels" [plotOptions]="content.charts.plotOptions"></apx-chart>
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+  <ng-container *ngFor="let charts of chartOptions">
+    <ng-container *ngIf="charts?.series?.length > 0">
+      <div class="chartsArea">
+        <apx-chart [series]="charts.series" [chart]="charts.chart" [xaxis]="charts.xaxis" [yaxis]="charts.yaxis"
+          [title]="charts.title" [legend]="charts.legend" [subtitle]="charts.subtitle" [dataLabels]="charts.dataLabels"
+          [labels]="charts.labels" [plotOptions]="charts.plotOptions" [colors]="charts.colors"></apx-chart>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

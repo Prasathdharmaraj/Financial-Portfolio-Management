@@ -55,6 +55,7 @@ export class AddUserComponent {
       {code: 'M', description: 'Male'},
       {code: 'F', description: 'Female'}
     ]
+    this.masterData.assetsTypes = ['Stocks', 'Real Estate', 'Mutual Funds', 'Cash Investment', 'Alternative Investment']
   }
   setuserData() {
    this.userForm.get('userName')?.setValue(this.data?.user['Name']);

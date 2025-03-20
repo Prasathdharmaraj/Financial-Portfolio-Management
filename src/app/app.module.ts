@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserDataComponent } from './components/user-data/user-data.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddUserComponent } from './Popups/add-user/add-user.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AddUserComponent } from './Popups/add-user/add-user.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgApexchartsModule
   ],
   providers: [
     {

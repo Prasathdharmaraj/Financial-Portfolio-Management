@@ -34,8 +34,8 @@ export class UserDataComponent {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   tableData: Array<Provider> = [
-    { 'Sl.No': 1, 'Name': 'Prasath D', 'User ID': 'prasath02Jan', 'Phone No': '9629737170', 'Email':'prasath@gmail.com', 'Gender': 'Male', 'Asset Type': 'Laptop', 'Quantity': 2, 'Price per Item':1000, 'Purchase Price': 2000, 'Date': '02-Jan-2025' },
-    { 'Sl.No': 2, 'Name': 'Shiva K', 'User ID': 'shiva26Jan', 'Phone No': '9629727170', 'Email':'shiva@gmail.com', 'Gender': 'Male', 'Asset Type': 'TV', 'Quantity': 3, 'Price per Item':2000, 'Purchase Price': 6000, 'Date': '26-Jan-2025' },
+    { 'Sl.No': 1, 'Name': 'Prasath D', 'User ID': 'prasath02Jan', 'Phone No': '9629737170', 'Email':'prasath@gmail.com', 'Gender': 'Male', 'Asset Type': 'Stocks', 'Quantity': 2, 'Price per Item':1000, 'Purchase Price': 2000, 'Date': '02-Jan-2025' },
+    { 'Sl.No': 2, 'Name': 'Shiva K', 'User ID': 'shiva26Jan', 'Phone No': '9629727170', 'Email':'shiva@gmail.com', 'Gender': 'Male', 'Asset Type': 'Real Estate', 'Quantity': 3, 'Price per Item':2000, 'Purchase Price': 6000, 'Date': '26-Jan-2025' },
   ];
   displayedColumns: any = [];
   columnsToDisplay = this.displayedColumns.slice();

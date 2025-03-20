@@ -45,12 +45,24 @@
           <mat-hint class="err-msg" *ngIf="formC['userGender'].touched && formC['userGender'].errors?.['required']">Gender is required</mat-hint>
         </mat-form-field>
       </div>
-      <div>
+      <!-- <div>
         <mat-form-field class="field">
           <mat-label>Asset Type</mat-label>
           <input matInput formControlName="assetType" required >
           <mat-hint class="err-msg"
             *ngIf="formC['assetType'].touched && formC['assetType'].errors?.['required']">Asset Type is required</mat-hint>
+        </mat-form-field>
+      </div> -->
+      <div>
+        <mat-form-field class="field">
+          <mat-label>Asset Type</mat-label>
+          <mat-select formControlName="assetType" required>
+            <mat-option *ngFor="let option of masterData?.assetsTypes" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-select>
+          <mat-hint class="err-msg" *ngIf="formC['assetType'].touched && formC['assetType'].errors && !formC['assetType'].errors?.['required']">Asset Type is invalid</mat-hint>
+          <mat-hint class="err-msg" *ngIf="formC['assetType'].touched && formC['assetType'].errors?.['required']">Asset Type is required</mat-hint>
         </mat-form-field>
       </div>
       <div>
