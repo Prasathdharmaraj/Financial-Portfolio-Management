@@ -16,6 +16,8 @@ export class AddUserComponent {
   preview: boolean;
   userForm: FormGroup;
   minDate: Date = new Date();
+  errorMessage: string;
+  validForm: boolean;
 
   constructor(
     private appService: AppService,
@@ -79,9 +81,18 @@ export class AddUserComponent {
       this.userForm.get('totalPrice')?.setValue(totalPrice)
     }
   }
+  userFormValid(){
+    if(this.userForm.valid){
+      return true;
+    }else{
+      return false;
+    }
+  }
   save() {
-    if (!this.userForm.valid) {
+    this.errorMessage = '';
+    if (!this.userFormValid()) {
       this.userForm.markAllAsTouched();
+      this.validForm = true;
       this.appService.openSnackBar('Enter all required Fields', 'ok')
       return
     }

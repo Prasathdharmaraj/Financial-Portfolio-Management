@@ -20,4 +20,23 @@ describe('AddUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('verify save if form is valid', ()=>{
+    spyOn(component, "userFormValid").and.returnValue(true);
+
+    component.errorMessage = 'error message';
+    component.validForm = true;
+    component.save();
+
+    expect(component.errorMessage).toBe("");
+    expect(component.validForm).toBeTruthy();
+  })
+  it('verify save user if the form is not valid', ()=>{
+    spyOn(component, "userFormValid").and.returnValue(false);
+
+    component.errorMessage = 'error message';
+    component.validForm = false;
+
+    expect(component.errorMessage).toBe('');
+    expect(component.validForm).toBeFalsy()
+  })
 });
